@@ -5,6 +5,7 @@
 package PackageGambar;
 
 import java.awt.CardLayout;
+import java.awt.Toolkit;
 
 /**
  *
@@ -17,6 +18,8 @@ public class CardGambar extends javax.swing.JFrame {
      */
     public CardGambar() {
         initComponents();
+        this.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("icon.jpg")));
+        this.setTitle("Aplikasi Penampil Gambar");
     }
 
     /**
@@ -60,12 +63,15 @@ public class CardGambar extends javax.swing.JFrame {
             }
         });
 
+        PanelBtn.setLayout(new java.awt.BorderLayout());
+
         jButton1.setText("Item 1");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
+        PanelBtn.add(jButton1, java.awt.BorderLayout.CENTER);
 
         jButton2.setText("Item 2");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -73,6 +79,7 @@ public class CardGambar extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
+        PanelBtn.add(jButton2, java.awt.BorderLayout.PAGE_START);
 
         jButton3.setText("Item 3");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -80,6 +87,7 @@ public class CardGambar extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
+        PanelBtn.add(jButton3, java.awt.BorderLayout.PAGE_END);
 
         jButton4.setText("Exit");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -87,33 +95,7 @@ public class CardGambar extends javax.swing.JFrame {
                 jButton4ActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout PanelBtnLayout = new javax.swing.GroupLayout(PanelBtn);
-        PanelBtn.setLayout(PanelBtnLayout);
-        PanelBtnLayout.setHorizontalGroup(
-            PanelBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelBtnLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jButton1)
-                .addGap(18, 18, 18)
-                .addComponent(jButton2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton4)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        PanelBtnLayout.setVerticalGroup(
-            PanelBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelBtnLayout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addGroup(PanelBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3)
-                    .addComponent(jButton4))
-                .addContainerGap(23, Short.MAX_VALUE))
-        );
+        PanelBtn.add(jButton4, java.awt.BorderLayout.LINE_END);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
